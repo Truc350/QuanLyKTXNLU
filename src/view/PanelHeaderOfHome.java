@@ -10,12 +10,13 @@ public class PanelHeaderOfHome extends JPanel{
     public PanelHeaderOfHome() {
         this.setBackground(new Color(59,185,94));
         this.setBounds(10,10,80,80);
-        this.setLayout(null);
+        this.setLayout(new BorderLayout());
 
         // add logo
-        btnLogo = new JButton(new ImageIcon("img/logoNLU.png"));
+        btnLogo = new JButton(new ImageIcon("src/img/Logo_HCMUAF.svg.png"));
+        btnLogo.setBackground(new Color(59,185,94));
         btnLogo.setBounds(10,10,80,80);
-        this.add(titleLable);
+        this.add(btnLogo,BorderLayout.WEST);
 
         //add title
         titleLable = new JLabel("Hệ Thống Quản Lý KTX NLU");
@@ -23,10 +24,6 @@ public class PanelHeaderOfHome extends JPanel{
         titleLable.setFont(new Font("Arial",Font.BOLD,24));
         titleLable.setForeground(Color.WHITE);
         titleLable.setHorizontalAlignment(SwingConstants.CENTER);
-        this.add(titleLable);
-
-
-
-
+        this.add(titleLable,BorderLayout.CENTER);
     }
 }

@@ -11,6 +11,8 @@ public class Controller {
     private View mainView;
     private ExitDialog mainExitDialog;
 
+//    private Model mainModel1;
+    private AdminRoomManagerView roomManagerView;
     public Controller(Model passwordModel, PasswordView passwordView) {
         this.passwordModel = passwordModel;
         this.passwordView = passwordView;

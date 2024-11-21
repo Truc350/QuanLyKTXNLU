@@ -12,11 +12,16 @@ public class StudentView extends JFrame {
     private JMenuItem menuManage;
 
     public StudentView() {
-        setTitle("Quản Lý Sinh Viên");
+
         setSize(800, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
+
+
+//        studentList = new JList<>();
+//        studentList.setPreferredSize(new Dimension(400, 300));
+//        mainPanel.add(new JScrollPane(studentList));
 
         // Set background image
         ImageIcon originalIcon = new ImageIcon("src/img/hinhanh.jpg");
@@ -67,6 +72,7 @@ public class StudentView extends JFrame {
         setJMenuBar(menuBar);
         add(backgroundImage);
     }
+
 
     public JButton getBtnStudentList() {
         return btnStudentList;

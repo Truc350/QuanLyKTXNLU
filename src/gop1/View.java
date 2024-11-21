@@ -4,16 +4,34 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+
 public class View extends JFrame {
     private JMenuItem exitMenuItem;
     private JMenuItem manageMenuItem;
     private JMenuItem roomManageMenuItem;
+    protected JPanel mainPanel;
 
+
+    public View(String title) {
+        // Thiết lập tiêu đề cho JFrame
+        super(title);
+        setSize(800, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null); // Cửa sổ xuất hiện giữa màn hình
+        setLayout(new BorderLayout());
+
+        // Khởi tạo mainPanel
+        mainPanel = new JPanel();
+        mainPanel.setLayout(new BorderLayout());
+        add(mainPanel); // Thêm mainPanel vào JFrame
+    }
     public View() {
         setTitle("Quản Lý Sinh Viên");
         setSize(800, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        setLayout(new BorderLayout());
+
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(null);
@@ -38,6 +56,7 @@ public class View extends JFrame {
 
         JMenu manageMenu = new JMenu("Quản Lý");
         manageMenuItem = new JMenuItem("Quản Lý Sinh Viên");
+        roomManageMenuItem = new JMenuItem("Quản Lý Phòng");
         manageMenuItem.setFont(new Font("Inter", Font.BOLD, 16));
         roomManageMenuItem = new JMenuItem("Quản Lý Phòng");
         roomManageMenuItem.setFont(new Font("Inter", Font.BOLD, 16));
@@ -47,6 +66,12 @@ public class View extends JFrame {
         menuBar.add(manageMenu);
 
         setJMenuBar(menuBar);
+        roomManageMenuItem.addActionListener(e -> openRoomManagerView());
+    }
+    private void openRoomManagerView() {
+        // Gọi giao diện Quản Lý Phòng (phải tạo RoomManagerView trước)
+        AdminRoomManagerView roomManagerView = new AdminRoomManagerView();
+        roomManagerView.setVisible(true);
     }
 
     public void setExitMenuItemListener(ActionListener listener) {

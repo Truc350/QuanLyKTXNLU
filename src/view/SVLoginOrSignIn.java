@@ -25,7 +25,7 @@ public class SVLoginOrSignIn extends JPanel {
         btnSignIn.setBounds(400,600,100,200);
         btnSignIn.setBackground(new Color(173, 216, 230));
         this.add(btnSignIn);
-    }  
+    }  //
 
     @Override
     protected void paintComponent(Graphics g) {

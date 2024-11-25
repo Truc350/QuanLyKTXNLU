@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class Home extends JFrame {
     MyMainPanel mainPanel;
+    CardLayout cards;
 
     public Home() throws HeadlessException {
         setTitle("Dormitory management system");
@@ -14,6 +15,12 @@ public class Home extends JFrame {
         this.setResizable(false);
         mainPanel = new MyMainPanel();
         getContentPane().add(mainPanel,BorderLayout.CENTER);
+
+
+
+
+
+
         this.setLocationRelativeTo(null);
         setVisible(true);
     }

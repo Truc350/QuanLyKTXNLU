@@ -53,7 +53,7 @@ public class PageTTCNcuaSVDaO extends JPanel {
 
         // add button ok, tra phong
         panelTraPhong = new JPanel(new FlowLayout(FlowLayout.CENTER));
-//
+
         btnOK = new JButton("OK");
         btnOK.setBackground(new Color(173, 216, 230));
         btnTraPhong = new JButton("Trả Phòng");

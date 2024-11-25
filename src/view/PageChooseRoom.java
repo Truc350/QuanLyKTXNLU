@@ -19,7 +19,7 @@ public class PageChooseRoom extends JPanel {
 
         imgBackround = new ImageIcon("src/img/backroundKTX.jpg").getImage();
 
-//
+
 
         // create comboBox gender
         optionsGender = new String[]{"Nam", "Nữ"};

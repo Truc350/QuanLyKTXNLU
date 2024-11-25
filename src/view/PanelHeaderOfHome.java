@@ -12,7 +12,7 @@ public class PanelHeaderOfHome extends JPanel{
         this.setBounds(10,10,80,80);
         this.setLayout(new BorderLayout());
 
-        //  add logo//
+        //  add logo
         btnLogo = new JButton(new ImageIcon("src/img/Logo_HCMUAF.svg.png"));
         btnLogo.setBackground(new Color(59,185,94));
         btnLogo.setBounds(10,10,80,80);

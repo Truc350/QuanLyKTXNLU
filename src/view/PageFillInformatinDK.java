@@ -120,7 +120,7 @@ public class PageFillInformatinDK extends JPanel {
         panel.setMaximumSize(new Dimension(600, 80));
         return panel;
 
-    }
+    }//
 
     private JPanel createInputField(String labelText) {
         JPanel panel = new JPanel(new BorderLayout());

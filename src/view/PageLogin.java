@@ -37,7 +37,7 @@ public class PageLogin extends JPanel {
         labelPasswd.setBounds(50,100,120   ,25);
         this.add(labelPasswd);
 
-
+//
         txtPasswd = new JPasswordField();
         txtPasswd.setBounds(200, 100, 150, 30);
         this.add(txtPasswd);

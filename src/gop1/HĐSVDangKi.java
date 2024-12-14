@@ -50,11 +50,11 @@ public class HĐSVDangKi {
         // Tạo panel chi tiết
         JPanel detailsPanel = new JPanel(null);
         detailsPanel.setOpaque(true);
-        detailsPanel.setBackground(Color.WHITE);
-        detailsPanel.setBounds(150, 50, 500, 400); // Panel trắng nằm cân giữa
+        detailsPanel.setBackground(new Color(173, 216, 230)); // Màu xanh nhạt
+        detailsPanel.setBounds(150, 50, 500, 400);
 
         // Hiển thị thông tin sinh viên
-        JLabel nameLabel = new JLabel("Tên: " + studentDetails[0]);
+        JLabel nameLabel = new JLabel("Họ Và Tên: " + studentDetails[0]);
         nameLabel.setBounds(20, 20, 460, 30); // Kích thước hợp lý, đảm bảo không bị tràn
         detailsPanel.add(nameLabel);
 

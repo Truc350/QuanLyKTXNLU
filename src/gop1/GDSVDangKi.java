@@ -2,8 +2,7 @@ package gop1;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 public class GDSVDangKi extends JFrame {
     private JTable studentTable;
@@ -30,6 +29,23 @@ public class GDSVDangKi extends JFrame {
         backgroundImage.setBounds(0, 0, 800, 500);
         setContentPane(backgroundImage); // Đặt nền ảnh làm nền chính
         backgroundImage.setLayout(null);
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                // Lấy kích thước mới của JFrame
+                int width = getWidth();
+                int height = getHeight();
+
+                // Thay đổi kích thước ảnh theo JFrame
+                Image scaledImage = originalIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+                ImageIcon scaledIcon = new ImageIcon(scaledImage);
+                backgroundImage.setIcon(scaledIcon);
+
+                // Đặt lại kích thước của JLabel
+                backgroundImage.setBounds(0, 0, width, height);
+
+            }
+        });
 
         // Tạo panel chính
         mainPanel = new JPanel(null);
@@ -66,7 +82,28 @@ public class GDSVDangKi extends JFrame {
         scrollPane.setBounds(20, 60, 760, 300);
         mainPanel.add(scrollPane);
 
-        backButton = new JButton("Quay về");
+        backButton = new JButton("Quay về"){
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+                // Vẽ nền nút bo tròn
+                g2.setColor(getBackground());
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), 30, 30);
+
+                // Vẽ viền bo tròn
+                g2.setColor(new Color(200, 40, 50));
+                g2.setStroke(new BasicStroke(2));
+                g2.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 30, 30);
+
+                super.paintComponent(g);
+            }
+            @Override
+            public void paint(Graphics g) {
+                super.paint(g);
+            }
+        };
         backButton.setBounds(20, 380, 100, 30); // Kích thước nút
         backButton.setBackground(new Color(220, 53, 69)); // Màu đỏ đẹp hơn
         backButton.setForeground(Color.WHITE); // Chữ màu trắng
@@ -74,18 +111,6 @@ public class GDSVDangKi extends JFrame {
         backButton.setFocusPainted(false); // Loại bỏ viền khi chọn
         backButton.setBorder(BorderFactory.createLineBorder(new Color(200, 40, 50), 2, true)); // Viền bo tròn
 
-        // Hiệu ứng hover
-        backButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                backButton.setBackground(new Color(255, 87, 104)); // Màu sáng hơn khi hover
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                backButton.setBackground(new Color(220, 53, 69)); // Quay lại màu ban đầu
-            }
-        });
         mainPanel.add(backButton);
         setLocationRelativeTo(null);
     }

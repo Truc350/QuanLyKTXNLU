@@ -41,10 +41,12 @@ public class Controller {
         Model studentModel = new Model();
         StudentView studentView = new StudentView();
         ExitDialog studentExitDialog = new ExitDialog(studentView);
+        StudentController studentController = new StudentController(new StudentListView());
+        MDSVDangKi mdsvDangKi = new MDSVDangKi();
 
         // Student View listeners
-        studentView.getBtnStudentList().addActionListener(new StudentListButtonListener(studentView));
-        studentView.getBtnRegisteredStudents().addActionListener(new RegisteredStudentsButtonListener(studentView));
+        studentView.getBtnStudentList().addActionListener(new StudentListButtonListener(studentView, studentController));
+        studentView.getBtnRegisteredStudents().addActionListener(new SVDangKiTheHien(studentView, mdsvDangKi));
         studentView.setExitMenuItemListener(new StudentExitMenuItemListener(studentExitDialog));
         studentExitDialog.setThoatButtonListener(new ExitDialogThoatButtonListener());
         studentExitDialog.setHuyButtonListener(new ExitDialogHuyButtonListener());
@@ -108,14 +110,35 @@ public class Controller {
 
     private class StudentListButtonListener implements ActionListener {
         private StudentView studentView;
+        private StudentController studentController;
 
-        public StudentListButtonListener(StudentView studentView) {
+        public StudentListButtonListener(StudentView studentView, StudentController studentController) {
             this.studentView = studentView;
+            this.studentController = studentController;
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(studentView, "Hiển thị Danh sách Sinh Viên Đang Ở");
+
+            StudentListView studentListView = new StudentListView();
+
+            DefaultListModel<String> listModel = new DefaultListModel<>();
+            for (String student : studentController.getStudentStrings()) { // Giả sử getStudents() trả về danh sách sinh viên
+                listModel.addElement(student);
+            }
+
+            studentListView.updateStudentList(studentController.getStudents());
+
+            studentListView.setVisible(true);
+
+            studentListView.getBackButton().addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    studentListView.dispose();
+                    studentView.setVisible(true);
+                }
+            });
         }
     }
 

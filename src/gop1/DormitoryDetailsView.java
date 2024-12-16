@@ -57,9 +57,17 @@ public class DormitoryDetailsView extends JFrame {
         backButton.setFont(new Font("Arial", Font.BOLD, 18));
         backButton.addActionListener(e -> dispose());
 
+        // Thêm nút "Danh sách thanh toán tiền điện nước"
+        JButton paymentButton = new JButton("Danh sách thanh toán tiền điện nước");
+        paymentButton.setFont(new Font("Arial", Font.BOLD, 18));
+        paymentButton.addActionListener(e -> {
+            new PaymentDetailsView(rooms).setVisible(true);
+        });
+
         JPanel buttonPanel = new JPanel(new FlowLayout());
         buttonPanel.setOpaque(false);
         buttonPanel.add(backButton);
+        buttonPanel.add(paymentButton);
 
         mainPanel.add(titleLabel, BorderLayout.NORTH);
         mainPanel.add(scrollPane, BorderLayout.CENTER);

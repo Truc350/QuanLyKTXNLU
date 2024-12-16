@@ -13,6 +13,7 @@ public class PasswordView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
+
         JPanel mainPanel = new JPanel(new GridBagLayout());
         mainPanel.setPreferredSize(new Dimension(800, 500));
         mainPanel.setBackground(new Color(161, 210, 224, 50));

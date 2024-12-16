@@ -79,6 +79,7 @@ public class View extends JFrame {
     }
 
     public void setManageMenuItemListener(ActionListener listener) {
+
         manageMenuItem.addActionListener(listener);
     }
 

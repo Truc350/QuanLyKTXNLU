@@ -9,14 +9,12 @@ public class Main {
             public void run() {
                 Model combinedModel = new Model(); // Sử dụng class đã gộp
                 PasswordView passwordView = new PasswordView();
+ Quyen
+
 
                 new Controller(combinedModel, passwordView);
                 passwordView.setVisible(true);
             }
-            ///
-
-
         });
-
     }
 }

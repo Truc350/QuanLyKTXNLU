@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class Home extends JFrame {
     SVLoginOrSignIn mainPanel;
     CardLayout cards;
-
+//
     public Home() throws HeadlessException {
         setTitle("Dormitory management system");
         CardLayout cards = new CardLayout();

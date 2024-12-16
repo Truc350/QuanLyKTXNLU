@@ -40,7 +40,6 @@ public class StudentListView extends JFrame {
 
         setJMenuBar(menuBar);
 
-//        JPanel mainPanel = new JPanel(new BorderLayout());
          JLabel titleLabel = new JLabel("Danh sách sinh viên", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
 
@@ -76,7 +75,6 @@ public class StudentListView extends JFrame {
         backgroundImage.add(searchPanel, BorderLayout.NORTH);
         backgroundImage.add(scrollPane, BorderLayout.CENTER);
         backgroundImage.add(backPanel, BorderLayout.SOUTH);
-//        mainPanel.add(backgroundImage);
 
         add(backgroundImage);
     }

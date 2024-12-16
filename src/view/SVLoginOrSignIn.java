@@ -2,6 +2,8 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class SVLoginOrSignIn extends JPanel {
     Image imgBackround;
@@ -25,12 +27,23 @@ public class SVLoginOrSignIn extends JPanel {
         btnSignIn.setBounds(400,600,100,200);
         btnSignIn.setBackground(new Color(173, 216, 230));
         this.add(btnSignIn);
+
+
+
+
+
+
     }  //
+
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(imgBackround, 0, 0, getWidth(),getHeight(),this);
+    }
+
+    public void change(String actionCommand) {
+
     }
 }
 

@@ -43,7 +43,6 @@ public class BiographyView extends JFrame {
         inforStudentPanel = new JPanel();
         inforStudentPanel.setBounds(150, 20, 500, 400);
         inforStudentPanel.setLayout(new BoxLayout(inforStudentPanel, BoxLayout.PAGE_AXIS));
-//        inforStudentPanel.setLayout(new GridLayout(0, 1));
         inforStudentPanel.setBackground(Color.LIGHT_GRAY);
 
         labelName = new JLabel("Họ và tên: ");

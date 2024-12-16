@@ -104,9 +104,9 @@ public class UpdateInforView extends JFrame {
                                                 .addComponent(disability)
                                                 .addComponent(ethnic)
                                                 .addComponent(notSubject))))
-                .addGroup(layout.createSequentialGroup()
-                        .addGap(350) // Căn giữa nút
-                                        .addComponent(btnUpdate))
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(350) // Căn giữa nút
+                                .addComponent(btnUpdate))
         );
 
         // Đặt Layout (Vertical Group)
@@ -144,7 +144,7 @@ public class UpdateInforView extends JFrame {
                                 .addComponent(cbNation))
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(policyArea))
-                                .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createSequentialGroup()
                                 .addComponent(martyrs)
                                 .addComponent(poorHousehold)
                                 .addComponent(disability)
@@ -156,5 +156,6 @@ public class UpdateInforView extends JFrame {
 
         add(panel, BorderLayout.CENTER);
 //        add(s2, BorderLayout.EAST);
+
     }
 }

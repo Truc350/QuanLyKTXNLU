@@ -108,6 +108,5 @@ public class StudentApprovalView extends JFrame{
 
         add(inforStudentPanel, BorderLayout.CENTER);
         add(backgroundImage);
-
     }
 }

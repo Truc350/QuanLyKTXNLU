@@ -42,10 +42,11 @@ public class Controller {
         StudentView studentView = new StudentView();
         ExitDialog studentExitDialog = new ExitDialog(studentView);
         StudentController studentController = new StudentController(new StudentListView());
+        MDSVDangKi mdsvDangKi = new MDSVDangKi();
 
         // Student View listeners
         studentView.getBtnStudentList().addActionListener(new StudentListButtonListener(studentView, studentController));
-        studentView.getBtnRegisteredStudents().addActionListener(new RegisteredStudentsButtonListener(studentView));
+        studentView.getBtnRegisteredStudents().addActionListener(new SVDangKiTheHien(studentView, mdsvDangKi));
         studentView.setExitMenuItemListener(new StudentExitMenuItemListener(studentExitDialog));
         studentExitDialog.setThoatButtonListener(new ExitDialogThoatButtonListener());
         studentExitDialog.setHuyButtonListener(new ExitDialogHuyButtonListener());

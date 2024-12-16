@@ -26,6 +26,8 @@ public class PanelChooseStudentOrManager extends JPanel {
         btnChooseStudent = new JButton(new ImageIcon("src/img/student1.jpg"));
         btnChooseStudent.setBounds(20, 20, 100, 100);
 
+
+
         panelStudent.add(btnChooseStudent, BorderLayout.CENTER);
 //        panelStudent.
         panelStudent.add(labelStudent = new JLabel("Student", JLabel.CENTER));
